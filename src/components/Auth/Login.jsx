@@ -16,6 +16,7 @@ const Login = ({handleLogin}) => {
           className="flex flex-col justify-center items-center gap-8 p-20"
           onSubmit={submitHandler}
         >
+          <h1 className="font-semibold text-2xl">Login</h1>
           <div className="flex flex-col gap-3">
             <input
               type="email"
@@ -35,7 +36,7 @@ const Login = ({handleLogin}) => {
             />
           </div>
           <button className="bg-blue-500 text-white p-2 rounded-xl w-64">
-            Login
+            Submit
           </button>
         </form>
       </div>
