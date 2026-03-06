@@ -42,23 +42,38 @@ const CreateTask = () => {
                 <label htmlFor="assign" className="text-sm">
                   Assign to
                 </label>
-                <input
-                  type="text"
+                <select
+                  name=""
                   id="assign"
-                  placeholder="Assign to.."
-                  className="border border-gray-800 rounded-xl placeholder:text-sm p-3 "
-                />
+                  className="border border-gray-800 rounded-xl placeholder:text-sm p-3 bg-gray-900"
+                >
+                  <option value="">-- Select member --</option>
+                  <option value="employee1">Aarav Sharma</option>
+                  <option value="employee2">Priya Verma</option>
+                  <option value="employee3">Rohan Mehta</option>
+                  <option value="employee4">Neha Kapoor</option>
+                  <option value="employee5">Vikram Singh</option>
+                </select>
               </div>
               <div className="flex flex-col gap-2 w-full">
                 <label htmlFor="category" className="text-sm">
                   Category
                 </label>
-                <input
-                  type="text"
+                <select
+                  name=""
                   id="category"
-                  placeholder="Design, Development, etc.."
-                  className="border border-gray-800 rounded-xl placeholder:text-sm p-3 "
-                />
+                  className="border border-gray-800 rounded-xl placeholder:text-sm p-3 bg-gray-900"
+                >
+                  <option value="">-- Select --</option>
+                  <option value="development">Development</option>
+                  <option value="design">Design</option>
+                  <option value="frontend">Frontend</option>
+                  <option value="backend">Backend</option>
+                  <option value="testing">Testing</option>
+                  <option value="security">Security</option>
+                  <option value="devops">DevOps</option>
+                  <option value="management">Management</option>
+                </select>
               </div>
             </div>
             <div className="mt-3">
