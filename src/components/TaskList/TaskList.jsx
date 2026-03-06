@@ -22,14 +22,17 @@ const TaskList = () => {
               <h2 className="font-semibold text-sm">{task.date}</h2>
             </div>
 
-            <div className="p-4">
-              <h1 className="font-semibold text-xl">{task.title}</h1>
+            <div className="p-4 flex flex-col justify-between h-[70%]">
+              <div>
+                <h1 className="font-semibold text-xl">{task.title}</h1>
 
-              <p className="text-sm mt-5">{task.description}</p>
-
-              <p className="mt-3 text-xs font-semibold">
-                Status: {task.status}
-              </p>
+                <p className="text-sm mt-5">{task.description}</p>
+              </div>
+              <div>
+                <p className="mt-3 text-xs font-semibold">
+                  Status: {task.status}
+                </p>
+              </div>
             </div>
           </div>
         ))}
