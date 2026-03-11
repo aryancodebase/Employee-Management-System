@@ -29,7 +29,7 @@ const TaskList = ({ updateTaskStatus }) => {
                 <p className="text-sm mt-5">{task.description}</p>
               </div>
               <div className="flex items-center gap-3">
-                <p className="text-xs font-semibold">Status:</p>
+                <p className="text-xs font-semibold text-black!">Status:</p>
 
                 <select
                   className="border border-black rounded px-2 py-1 text-xs bg-red-300 text-black! outline-none"
