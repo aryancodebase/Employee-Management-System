@@ -28,10 +28,19 @@ const TaskList = () => {
 
                 <p className="text-sm mt-5">{task.description}</p>
               </div>
-              <div>
-                <p className="mt-3 text-xs font-semibold">
-                  Status: {task.status}
-                </p>
+              <div className="flex items-center gap-3 border">
+                <p className="text-xs font-semibold">Status:</p>
+
+                <select
+                  className="border border-black rounded px-2 py-1 text-xs bg-red-300 text-black! outline-none"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    -- Select --
+                  </option>
+                  <option value="active">Active</option>
+                  <option value="completed">Completed</option>
+                </select>
               </div>
             </div>
           </div>
