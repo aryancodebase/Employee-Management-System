@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiLogIn } from "react-icons/bi";
 
 const Login = ({handleLogin}) => {
   const [email, setEmail] = useState("");
@@ -35,8 +36,8 @@ const Login = ({handleLogin}) => {
               className="border-2 w-64 p-3 mb-2 rounded-xl outline-none border-gray-500 "
             />
           </div>
-          <button className="bg-blue-500 text-white p-2 rounded-xl w-64">
-            Submit
+          <button className="bg-blue-700 hover:bg-blue-800 transition-all text-white p-2 rounded-xl w-64 flex items-center justify-center gap-2">
+            <BiLogIn className="text-xl"/>
           </button>
         </form>
       </div>
