@@ -2,12 +2,12 @@ import Header from "../other/Header"
 import TaskListNumber from "../other/TaskListNumber"
 import TaskList from "../TaskList/TaskList"
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({updateTaskStatus}) => {
   return (
     <div className="h-screen">
       <Header />
       <TaskListNumber />
-      <TaskList />
+      <TaskList updateTaskStatus={updateTaskStatus} />
     </div>
   )
 }

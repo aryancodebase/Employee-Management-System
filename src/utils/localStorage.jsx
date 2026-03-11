@@ -117,3 +117,7 @@ export const users = [
     tasks: [],
   },
 ];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("users", JSON.stringify(users));
+};

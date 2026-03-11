@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 
-const TaskList = () => {
+const TaskList = ({ updateTaskStatus }) => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -28,12 +28,13 @@ const TaskList = () => {
 
                 <p className="text-sm mt-5">{task.description}</p>
               </div>
-              <div className="flex items-center gap-3 border">
+              <div className="flex items-center gap-3">
                 <p className="text-xs font-semibold">Status:</p>
 
                 <select
                   className="border border-black rounded px-2 py-1 text-xs bg-red-300 text-black! outline-none"
-                  defaultValue=""
+                  value={task.status || ""}
+                  onChange={(e) => updateTaskStatus(task.id, e.target.value)}
                 >
                   <option value="" disabled>
                     -- Select --
