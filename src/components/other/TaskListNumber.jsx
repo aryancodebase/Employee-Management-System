@@ -16,10 +16,7 @@ const TaskListNumber = () => {
         </h2>
         <h1 className="text-3xl p-2">Completed Task</h1>
       </div>
-      <div className=" bg-blue-900 p-6 w-[45%] rounded-xl">
-        <h2 className="text-3xl p-2">0</h2>
-        <h1 className="text-3xl p-2">New Task</h1>
-      </div>
+      
       <div className=" bg-yellow-600 p-6 w-[45%] rounded-xl">
         <h2 className="text-3xl p-2">
           {user?.tasks?.filter((task) => task.status === "active").length || 0}

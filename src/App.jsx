@@ -34,7 +34,7 @@ const App = () => {
       setUser(JSON.parse(storedUser));
     }
   }, []);
-
+  
   const updateTaskStatus = (taskId, newStatus) => {
     const updatedTasks = user.tasks.map((task) =>
       task.id === taskId ? { ...task, status: newStatus } : task,
