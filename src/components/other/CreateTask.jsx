@@ -1,4 +1,8 @@
 const CreateTask = () => {
+  const user =
+    JSON.parse(localStorage.getItem("users")).filter(
+      (u) => u.role === "employee",
+    ) || [];
   return (
     <>
       <div className="w-full">
@@ -48,11 +52,13 @@ const CreateTask = () => {
                   className="border border-gray-800 rounded-xl placeholder:text-sm p-3 bg-gray-900"
                 >
                   <option value="">-- Select member --</option>
-                  <option value="employee1">Aarav Sharma</option>
-                  <option value="employee2">Priya Verma</option>
-                  <option value="employee3">Rohan Mehta</option>
-                  <option value="employee4">Neha Kapoor</option>
-                  <option value="employee5">Vikram Singh</option>
+                  {user
+                    .filter((u) => u.role === "employee")
+                    .map((employee) => (
+                      <option key={employee.id} value={employee.id}>
+                        {employee.name}
+                      </option>
+                    ))}
                 </select>
               </div>
               <div className="flex flex-col gap-2 w-full">
@@ -73,6 +79,17 @@ const CreateTask = () => {
                   <option value="security">Security</option>
                   <option value="devops">DevOps</option>
                   <option value="management">Management</option>
+                  <option value="optimization">Optimization</option>
+                  <option value="ux">UX</option>
+                  <option value="ui">UI</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="documentation">Documentation</option>
+                  <option value="analytics">Analytics</option>
+                  <option value="research">Research</option>
+                  <option value="database">Database</option>
+                  <option value="infrastructure">Infrastructure</option>
+                  <option value="content">Content</option>
+                  <option value="seo">SEO</option>
                 </select>
               </div>
             </div>
