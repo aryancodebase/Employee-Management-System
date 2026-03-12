@@ -253,8 +253,6 @@ Employee sees assigned tasks
 
 Potential enhancements for the project:
 
-* Add **task creation by Admin**
-* Add **task status updates**
 * Add **task filtering**
 * Integrate **backend API (Node.js / Express)**
 * Implement **JWT authentication**
@@ -275,6 +273,16 @@ This project helped practice:
 
 ---
 
-# 📜 License
+---
+# Images
 
-This project is open-source and available under the **MIT License**.
+* ![Login Image](<Screenshot 2026-03-12 181637.png>)
+* ![Admin Page Image](<Screenshot 2026-03-12 181711.png>)
+* ![Employee Page Image](<Screenshot 2026-03-12 181733.png>)
+---
+
+---
+ # Live Demo
+
+ * employee-management-system-teal-chi.vercel.app
+---
