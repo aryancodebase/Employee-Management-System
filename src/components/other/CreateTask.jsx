@@ -5,7 +5,6 @@ const CreateTask = () => {
   const { formData, setFormData } = useContext(AuthContext);
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-
   const employees = users.filter((u) => u.role === "employee");
 
   const handleSubmit = (e) => {
@@ -17,7 +16,6 @@ const CreateTask = () => {
     }
 
     const employee = users.find((u) => u.id === Number(formData.assignedTo));
-
     if (!employee) return;
 
     const newTask = {
@@ -30,12 +28,10 @@ const CreateTask = () => {
     };
 
     employee.tasks = [...employee.tasks, newTask];
-
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Task assigned successfully");
 
-    // reset form
     setFormData({
       title: "",
       description: "",
@@ -50,12 +46,13 @@ const CreateTask = () => {
       <div className="rounded-xl bg-gray-900 w-full">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-3 p-6 w-full"
+          className="flex flex-col gap-3 p-4 sm:p-6 w-full"
         >
           <div className="flex flex-col gap-2">
             <label htmlFor="title" className="text-sm">
               Task title
             </label>
+
             <input
               type="text"
               value={formData.title}
@@ -64,7 +61,7 @@ const CreateTask = () => {
               }
               id="title"
               placeholder="Title here.."
-              className="border border-gray-800 rounded-xl placeholder:text-sm p-3"
+              className="border border-gray-800 rounded-xl p-3 placeholder:text-sm"
             />
           </div>
 
@@ -72,6 +69,7 @@ const CreateTask = () => {
             <label htmlFor="description" className="text-sm">
               Description
             </label>
+
             <textarea
               id="description"
               value={formData.description}
@@ -81,13 +79,14 @@ const CreateTask = () => {
               className="border p-3 border-gray-800 rounded-xl placeholder:text-sm"
               rows={3}
               placeholder="Describe your task here..."
-            ></textarea>
+            />
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="date" className="text-sm">
               Date
             </label>
+
             <input
               type="date"
               value={formData.date}
@@ -99,7 +98,8 @@ const CreateTask = () => {
             />
           </div>
 
-          <div className="flex gap-5">
+          {/* Responsive row */}
+          <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex flex-col gap-2 w-full">
               <label htmlFor="assign" className="text-sm">
                 Assign to
@@ -160,14 +160,12 @@ const CreateTask = () => {
             </div>
           </div>
 
-          <div className="mt-3">
-            <button
-              type="submit"
-              className="bg-blue-600 text-white rounded-xl px-4 py-2 hover:bg-blue-700 transition-colors w-full"
-            >
-              Create Task
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white rounded-xl px-4 py-2 hover:bg-blue-700 transition-colors w-full mt-2"
+          >
+            Create Task
+          </button>
         </form>
       </div>
     </div>
